@@ -3,10 +3,10 @@
     <h1>Houses</h1>
   </div>
   <!-- SECTION form -->
-  <section class="row">
+  <section class="row m-4">
     <div class="col-12">
       <h3>List a home!</h3>
-      <form>
+      <form onsubmit="app.HousesController.createNewHouse()">
         <section class="row">
           <div class="col-md-3">
             <label for="address">Address</label>
@@ -17,32 +17,35 @@
             <input name="year" id="year" type="number" min="0" max="2025" value="2000" required>
           </div>
           <div class="col-md-3">
-            <label for="address">Price</label>
-            <input name="address" id="address" type="number" min="0" max="99999999999" placeholder="Price of Listing"
+            <label for="price">Price</label>
+            <input name="price" id="price" type="number" min="0" max="99999999999" placeholder="Price of Listing"
               required>
           </div>
           <div class="col-md-3">
-            <label for="address"># of Bedrooms</label>
-            <input name="address" id="address" type="number" placeholder="# of Bedrooms" min="0" max="100">
+            <label for="bedrooms"># of Bedrooms</label>
+            <input name="bedrooms" id="bedrooms" type="number" placeholder="# of Bedrooms" min="0" max="100" required>
           </div>
           <div class="col-md-3">
-            <label for="address"># of Bathrooms</label>
-            <input name="address" id="address" type="number" placeholder="# of Bathrooms" min="0" max="100" required>
-          </div>
-          <div class="col-md-3">
-            <label for="address">Total Square Feet</label>
-            <input name="address" id="address" type="number" placeholder="Sqft of Home" min="1" max="9999999999"
+            <label for="bathrooms"># of Bathrooms</label>
+            <input name="bathrooms" id="bathrooms" type="number" placeholder="# of Bathrooms" min="0" max="100"
               required>
           </div>
           <div class="col-md-3">
-            <label for="address">Image URL</label>
-            <input name="address" id="address" type="url" placeholder="https://images.com/image.png" required>
+            <label for="sqft">Total Square Feet</label>
+            <input name="sqft" id="sqft" type="number" placeholder="Sqft of Home" min="1" max="9999999999" required>
           </div>
           <div class="col-md-3">
-            <label for="address">Description</label>
-            <textarea name="address" id="address" placeholder="Description of Home" required></textarea>
+            <label for="imgUrl">Image URL</label>
+            <input name="imgUrl" id="imgUrl" type="url" placeholder="https://images.com/image.png" required>
+          </div>
+          <div class="col-md-3">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" placeholder="Description of Home" required></textarea>
           </div>
         </section>
+        <div>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
       </form>
     </div>
   </section>

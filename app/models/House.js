@@ -27,11 +27,15 @@ export class House {
             <h2>${this.address}</h2>
             <h4>${this.year}<h4>
             <h5>${this.bedrooms} bedrooms, ${this.bathrooms} bathrooms, ${this.sqft}sqft</h5>
-            <h3>$${this.price}</h3>
+            <h3>$${this.priceAsCurrency}</h3>
             <p>${this.description}</p>
           </div>
         </section>
       </div>
     </div>`
+  }
+
+  get priceAsCurrency() {
+    return new Intl.NumberFormat().format(this.price)
   }
 }
