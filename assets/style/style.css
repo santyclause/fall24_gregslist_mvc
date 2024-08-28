@@ -1,4 +1,7 @@
-/* BASIC STYLES HERE */
+label {
+  display: block;
+}
+
 .car-img {
   height: 50vh;
   width: 100%;
@@ -9,6 +12,13 @@
   border: 3px solid;
 }
 
-label {
-  display: block;
+.house-card {
+  box-shadow: 0px 5px 10px #424242;
+  padding: 0;
+}
+
+.house-img {
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
 }
