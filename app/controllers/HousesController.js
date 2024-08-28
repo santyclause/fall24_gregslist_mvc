@@ -6,17 +6,17 @@ housesService
 export class HousesController {
   constructor() {
     AppState.on('houses', this.drawHouses)
-    this.drawHouses()
+    housesService.loadHouses();
   }
 
   drawHouses() {
     const houses = AppState.houses;
     let houseCont = '';
-    const houseElem = document.getElementById('houses')
+    const houseElem = document.getElementById('houses');
 
-    houses.forEach((house) => houseCont += house.houseCardTemplate)
+    houses.forEach((house) => houseCont += house.houseCardTemplate);
 
-    houseElem.innerHTML = houseCont
+    houseElem.innerHTML = houseCont;
   }
 
   createNewHouse() {
@@ -25,5 +25,16 @@ export class HousesController {
     const houseFormData = getFormData(form);
 
     housesService.createNewHouse(houseFormData);
+  }
+
+  deleteHouse(selectedHouse) {
+    let wantsToDelete = window.confirm("Are you sure?");
+    let reallyWantsToDelete = false;
+    if (wantsToDelete) {
+      reallyWantsToDelete = window.confirm("Are you really really sure?");
+    }
+    if (reallyWantsToDelete) {
+      housesService.deleteHouse(selectedHouse);
+    }
   }
 }

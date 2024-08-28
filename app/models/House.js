@@ -24,7 +24,7 @@ export class House {
               alt="" class="img-fluid house-img">
           </div>
           <div class="col-md-8">
-            <h2>${this.address}</h2>
+            <h2>${this.address} <i onclick="app.HousesController.deleteHouse('${this.id}')" class="mdi mdi-delete" role="button"></i></h2>
             <h4>${this.year}<h4>
             <h5>${this.bedrooms} bedrooms, ${this.bathrooms} bathrooms, ${this.sqft}sqft</h5>
             <h3>$${this.priceAsCurrency}</h3>
